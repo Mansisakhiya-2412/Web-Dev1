@@ -1,0 +1,23 @@
+what is git?
+
+-> vcs = version control system
+
+
+what is git hub?
+
+-> kind of remote server
+
+
+
+create new folder -> open folder in vs code -> terminal on karo
+-> type git init in terminal
+
+
+
+staging area == mall ma bill aapiye a pla jetli vastu choose kari a or pa6u muki dai a
+
+modified == change thai gya pa6inu ABC -> XYZ
+
+unmodified == hoy avu ne avu j 
+
+untracked == git track nahi kar pa raha 
