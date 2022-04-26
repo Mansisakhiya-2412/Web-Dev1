@@ -15,12 +15,7 @@ browserPromise.then(function (browser) {
     let urlPromise = page.goto("https://www.hackerrank.com/");
     return urlPromise;
 }).then(function () {
-    console.log("Hackerrank is opened");
-    let waitPromise = page.waitForSelector("ul.menu a");
-    return waitPromise;
-}).then(function () {
-    let clickPromise = page.click("ul.menu a");
-    return clickPromise;
+   return WaitAndClick("ul.menu a")
 }).then(function () {
     let waitPromise = page.waitForSelector(".fl-module-content.fl-node-content .fl-button");
     return waitPromise;
@@ -44,12 +39,7 @@ browserPromise.then(function (browser) {
     let clickPromse = page.click('button[data-analytics="LoginPassword"]');
     return clickPromse;
 }).then(function(){
-    console.log("Login successful hogya hai ");
-    let waitPromise = page.waitForSelector('[data-automation="algorithms"]');
-    return waitPromise;
-}).then(function(){
-    let clickPromise = page.click('[data-automation="algorithms"]');
-    return clickPromise;
+   return WaitAndClick('[data-automation="algorithms"]');
 }).then(function(){
     return page.waitForSelector(".filter-group");
 }).then(function(){
@@ -66,7 +56,19 @@ browserPromise.then(function (browser) {
     return page.waitForSelector('.ui-btn.ui-btn-normal.primary-cta.ui-btn-line-primary.ui-btn-styled');
 }).then(function() {
     
-
-
 })
 
+
+
+function WaitAndClick(selector){
+    return new Promise(function(resolve,reject){
+        let waitPromise = page.waitForSelector(selector);
+        waitPromise.then(function(){
+            let clickPromise = page.click(selector);
+            return clickPromise;
+
+        }).then(function(){
+            resolve();
+        })
+    })
+}
