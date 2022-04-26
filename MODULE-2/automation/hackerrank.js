@@ -2,7 +2,8 @@ const puppeteer = require('puppeteer');
 const mail = "jocawiv632@carsik.com";
 const pass = "789456123";
 
-let browserPromise = puppeteer.launch({ headless: false });
+let browserPromise = puppeteer.launch({ headless: false, defaultViewport: null,args: ['--start-fullscreen'] }
+);
 let page;
 browserPromise.then(function (browser) {
     console.log("Browser is opened");
