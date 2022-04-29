@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const mail = "jocawiv632@carsik.com";
 const pass = "789456123";
+const code = require('./code');
 
 let browserPromise = puppeteer.launch({ headless: false, defaultViewport: null, args: ['--start-fullscreen'] }
 );
@@ -68,7 +69,7 @@ browserPromise.then(function (browser) {
     return arrPromise;
 }).then(function(questionArr){
     console.log(questionArr);
-    
+    let questionPromise = questionSolver(questionArr[0],code.answers[0]);
 })
 
 
@@ -82,6 +83,46 @@ function WaitAndClick(selector) {
 
         }).then(function () {
             resolve();
+        })
+    })
+}
+
+function questionSolver(question,answer){
+    return new Promise (function(resolve,reject){
+        let linkPromise = page.goto(question);
+        linkPromise.then(function(){
+            return WaitAndClick('.checkBoxWrapper input');
+        }).then(function(){
+            console.log("on the text area");
+            let typePromise = page.type('.ui-tooltip-wrapper textarea',answer);
+            return typePromise;
+        }).then (function(){
+            let holdControl = page.keyboard.down('Control');
+            return holdControl;
+        }).then (function(){
+            let pressA = page.keyboard.press('A');
+            return pressA;
+        }).then (function(){
+            let pressX = page.keyboard.press('X');
+            return pressX;
+        }).then (function(){
+            let upControl = page.keyboard.up("Control");
+            return upControl;
+        }).then (function(){
+            return WaitAndClick('.monaco-editor.no-user-select.vs');
+        }).then(function(){
+            let holdControl= page.keyboard.down('Control');
+            return holdControl;
+        }).then (function(){
+            let pressA = page.keyboard.press('A');
+            return pressA;
+        }).then (function(){
+            let pressV = page.keyboard.press('V');
+            return pressV;
+        }).then(function(){
+            return WaitAndClick('.ui-btn.ui-btn-normal.ui-btn-primary.pull-right.hr-monaco-submit.ui-btn-styled');
+        }).then(function(){
+            console.log("question submitted successuFlly");
         })
     })
 }
