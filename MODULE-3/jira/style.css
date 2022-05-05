@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.toolbox-cont {
+    height: 5rem;
+    background-color: coral;
+    display: flex;
+    align-items: center;
+}
+
+.toolbox-priority-cont {
+    height: 3rem;
+    background-color: rgb(89, 161, 224);
+    width: 18rem;
+    margin-left: 5rem;
+}
+
+.action-btn-cont {
+    background-color: blueviolet;
+    height: 3rem;
+    width: 10rem;
+    margin-left: 5rem;
+}
