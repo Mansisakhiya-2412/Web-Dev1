@@ -9,21 +9,58 @@ body {
 
 .toolbox-cont {
     height: 5rem;
-    background-color: coral;
+    background-color: #A2B38B;
     display: flex;
     align-items: center;
 }
 
 .toolbox-priority-cont {
     height: 3rem;
-    background-color: rgb(89, 161, 224);
+    background-color: rgb(166, 175, 182);
     width: 18rem;
     margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .action-btn-cont {
-    background-color: blueviolet;
+    background-color: lightgray;
     height: 3rem;
     width: 10rem;
     margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.color {
+    /* height: ; */
+    /* background-color: black; */
+    height: 1.5rem;
+    width: 3rem;
+}
+
+.lightpink {
+    background-color: lightpink;
+}
+
+.blue {
+    background-color: lightskyblue;
+}
+
+.green {
+    background-color: rgb(157, 235, 157);
+}
+
+.black {
+    background-color: black;
+}
+
+.add-btn {
+    font-size: 1.5rem;
+}
+
+.remove-btn {
+    font-size: 1.5rem;
 }
