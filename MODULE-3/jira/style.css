@@ -64,3 +64,55 @@ body {
 .remove-btn {
     font-size: 1.5rem;
 }
+
+.task-board{
+    background-color: rgb(82, 143, 86);
+    height: 18rem;
+    width: 33rem;
+    margin-left: 25rem;
+    margin-top: 6rem;
+    display: flex;
+    /* justify-content: ; */
+    align-items: flex-end;
+}
+
+.enter-task{
+    background-color: tomato;
+    height: 18rem;
+    width: 9rem;
+}
+
+.modal-cont{
+    background-color: lightgrey;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    margin-left: 20rem;
+    margin-top: 7rem;
+    
+}
+
+.textarea-cont{
+    outline:none;
+    resize: none;
+    border: none;
+    background-color:lightyellow;
+    height: 100%;
+    width: 75%;
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.priority-color-cont{
+
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}   
+.priority-color{
+    height: 3rem;
+    width: 5rem;
+}
