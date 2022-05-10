@@ -83,12 +83,15 @@ body {
 }
 
 .modal-cont{
+    position: absolute;
+    left: 25vw;
+    top:25vh;
     background-color: lightgrey;
     height: 50vh;
     width: 50vw;
-    display: flex;
-    margin-left: 20rem;
-    margin-top: 7rem;
+    display: none;
+    /* margin-left: 20rem; */
+    /* margin-top: 7rem; */
     
 }
 
@@ -116,3 +119,32 @@ body {
     height: 3rem;
     width: 5rem;
 }
+
+.main-cont{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem; 
+}
+
+.ticket-cont{
+    background-color: lightskyblue;
+    height: 10rem;
+    width: 15rem;
+}
+
+.ticket-color{
+    height: 1rem;
+}
+
+.ticket-id{
+    height: 1.5rem;
+    background-color: red;
+}
+
+.task-area{
+    height: calc(100%-1rem-1.5rem);
+    padding: 5px;
+    font-size: 1.25rem;
+} 
