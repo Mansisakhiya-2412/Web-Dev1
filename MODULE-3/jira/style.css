@@ -148,3 +148,7 @@ body {
     padding: 5px;
     font-size: 1.25rem;
 } 
+
+.active{
+    border: 5px solid red;
+}
