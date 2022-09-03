@@ -123,6 +123,7 @@ function questionSolver(question,answer){
             return WaitAndClick('.ui-btn.ui-btn-normal.ui-btn-primary.pull-right.hr-monaco-submit.ui-btn-styled');
         }).then(function(){
             console.log("question submitted successuFlly");
+            resolve();
         })
     })
 }
