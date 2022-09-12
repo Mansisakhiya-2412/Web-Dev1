@@ -1,28 +1,24 @@
-const fs = require("fs");
+const FS = require("fs");
 
-console.log("Before");
-let F1KaPromise = fs.promises.readFile("f1.txt");
-let F2KaPromise = fs.promises.readFile("f2.txt");
-console.log(F1KaPromise);
+console.log("BeFore : ");
+let F1kaPromise = FS.promises.readFile("f1.txt");
+let F2KaPromise = FS.promises.readFile("f2.txt")
 
-F1KaPromise.then(function (data) {
-
-    console.log(data + " ");
-
+F1kaPromise.then(function(data){
+    console.log(data+" ");
 })
 
-F1KaPromise.catch(function (error) {
+F1kaPromise.catch(function(error){
     console.log(error);
 })
 
-F2KaPromise.then(function (data) {
 
-    console.log(data + " ");
-
+F2KaPromise.then(function(data){
+    console.log(data+" ")
 })
 
-F2KaPromise.catch(function (error) {
+F2KaPromise.catch(function(error){
     console.log(error);
 })
 
-console.log("AFter");
+console.log("AFter :")
