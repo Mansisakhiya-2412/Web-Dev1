@@ -11,7 +11,13 @@ const puppeteer = require('puppeteer');
 
 let browserPromise = puppeteer.launch({ headless: false});
 
-browserPromise.then(function(browserInstance){
+browserPromise.then(function(browser){
     console.log("Browser is opened");
-    let pagePromise = browserInstance.newPage();
+    let pagePromise = browser.newPage();
+    return pagePromise;
+}).then(function(page){
+    console.log("Page is opened");
+    let urlPromise = page.goto("https://www.google.co.in/");
+}).then(function(){
+    console.log('google is opened');
 })
